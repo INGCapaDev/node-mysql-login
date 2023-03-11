@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS irenelogin;
+
+USE irenelogin;
+
+CREATE TABLE IF NOT EXISTS users (
+  email VARCHAR(100) NOT NULL,
+  username VARCHAR(50) NOT NULL,
+  pass VARCHAR(255) NOT NULL,
+  PRIMARY KEY (email)
+);

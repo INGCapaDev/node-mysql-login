@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <title>Registro</title>
+</head>
+
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+  <%- include('partials/encabezado.html') %>
+
+  <!-- Section: Design Block -->
+  <section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="
+        background-image: url('https://img.freepik.com/foto-gratis/pantallas-computadora-que-ejecutan-codigo-programacion-oficina-agencia-desarrollo-software-vacio-computadoras-que-analizan-algoritmos-datos-segundo-plano-servidores-red-neuronal-cloud-computing-sala-datos_482257-33353.jpg?w=1380&t=st=1678521556~exp=1678522156~hmac=9a5fbdd05b83cbe1f7a7807a83cd7d4eab726c716fff93895d9305e06b07d317');
+        height: 19rem;
+        background-position: center;
+        background-size: cover;
+        "></div>
+    <!-- Background image -->
+
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+      <div class="card-body py-5 px-md-5">
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold mb-5" style="letter-spacing: .8px;">Registrarse ahora</h2>
+            <form action="/register" method="post">
+
+              <div class="form-outline mb-4">
+                <input type="text" id="username" name="username" class="form-control" required />
+                <label class="form-label" for="username">Nombre de Usuario</label>
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="email" name="email" class="form-control" required />
+                <label class="form-label" for="email">Correo Electrónico</label>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="pass" name="pass" class="form-control" required />
+                <label class="form-label" for="pass">Contraseña</label>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-info btn-block mb-4">
+                Registrarse
+              </button>
+              <%
+              if (error) {
+              %>
+              <p class="fw-bold text-danger"><%-error%></p>
+              <%
+              }
+              %>
+              <p>Ya tiene una cuenta? <a href="/" class="link-info">Iniciar sesión</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+  <%- include('partials/pie.html') %>
+</body>
+
+</html>

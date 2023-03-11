@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <title>Recuperar Clave</title>
+</head>
+
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+  <%- include('partials/encabezado.html') %>
+
+  <!-- Section: Design Block -->
+  <section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="
+        background-image: url('https://img.freepik.com/foto-gratis/imagen-primer-plano-programador-trabajando-su-escritorio-oficina_1098-18707.jpg?w=996&t=st=1678524304~exp=1678524904~hmac=1b8abed8d72bd0ff32b9d95639370da80ef6c5cdc97c10bdabc7b9f53380c529');
+        height: 19rem;
+        background-position: center;
+        background-size: cover;
+        "></div>
+    <!-- Background image -->
+
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+      <div class="card-body py-5 px-md-5">
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold mb-5" style="letter-spacing: .8px;">Recuperar Contraseña</h2>
+            <form onsubmit="return claveAlerta()">
+
+              <div class="form-outline mb-4">
+                <input type="text" id="user" name="user" class="form-control" required />
+                <label class="form-label" for="user">Nombre de Usuario</label>
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="email" name="email" class="form-control" required />
+                <label class="form-label" for="email">Correo Electrónico</label>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-info btn-block mb-4" id="recover">
+                Solicitar
+              </button>
+              <p>Deseas regresar? <a href="/" class="link-info">Iniciar sesión</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+  <%- include('partials/pie.html') %>
+</body>
+
+<script>
+  const claveAlerta = () => {
+    window.location = "/";
+    alert('Te hemos enviado tu clave de recuperación al correo proporcionado');
+  };
+</script>
+
+</html>

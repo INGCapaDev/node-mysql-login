@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <title>Usuario Registrado</title>
+</head>
+
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+  <%- include('partials/encabezado.html') %>
+  <!-- Section: Design Block -->
+  <section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="
+      background-image: url('https://img.freepik.com/foto-gratis/pantallas-computadora-que-ejecutan-codigo-programacion-oficina-agencia-desarrollo-software-vacio-computadoras-que-analizan-algoritmos-datos-segundo-plano-servidores-red-neuronal-cloud-computing-sala-datos_482257-33353.jpg?w=1380&t=st=1678521556~exp=1678522156~hmac=9a5fbdd05b83cbe1f7a7807a83cd7d4eab726c716fff93895d9305e06b07d317');
+      height: 19rem;
+      background-position: center;
+      background-size: cover;
+      "></div>
+    <!-- Background image -->
+
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+      margin-top: -100px;
+      background: hsla(0, 0%, 100%, 0.8);
+      backdrop-filter: blur(30px);
+      ">
+      <div class="card-body py-5 px-md-5">
+        <p class="display-1">Usuario registrado exitosamente.</p>
+        <a href="/" class="btn btn-info btn-block mb-4">
+          Iniciar Sesion
+        </a>
+
+      </div>
+    </div>
+  </section>
+  <%- include('partials/pie.html') %>
+
+</body>
+
+</html>

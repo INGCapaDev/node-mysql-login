@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <title>Inicio</title>
+</head>
+
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+  <%- include('partials/encabezado.html') %>
+  <p class="display-1 text-center mt-5">Bienvenido <%= username %></p>
+  <div class="w-100 d-flex" style=>
+    <a href="/logout" style="margin: 0 auto;" class="btn btn-info btn-block mt-5 mb-3">
+      Cerrar Sesión
+    </a>
+  </div>
+  <%- include('partials/pie.html') %>
+
+</body>
+
+</html>
