@@ -5,13 +5,21 @@ import bcrypt from 'bcrypt';
 
 router.get('/', (req, res) => {
   if (req.session.loggedin != true) {
+    res.render('cursos.html', { error: null });
+    return;
+  }
+  return res.redirect('/home');
+});
+
+router.get('/login', (req, res) => {
+  if (req.session.loggedin != true) {
     res.render('login.html', { error: null });
     return;
   }
   return res.redirect('/home');
 });
 
-router.post('/', (req, res) => {
+router.post('/login', (req, res) => {
   const data = req.body;
   req.getConnection((err, conn) => {
     conn.query(
@@ -71,7 +79,7 @@ router.post('/register', (req, res) => {
 
           req.getConnection((err, conn) => {
             conn.query('INSERT INTO users SET ?', [data], (err, rows) => {
-              return res.redirect('/success');
+              return res.render('success.html');
             });
           });
         });
@@ -86,10 +94,6 @@ router.get('/recover', (req, res) => {
     return;
   }
   return res.redirect('/home');
-});
-
-router.get('/success', (req, res) => {
-  res.render('success.html');
 });
 
 router.get('/home', (req, res) => {
