@@ -1,69 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="-/css/login.css" />
+    <title>Inicio de sesión</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" href="-/css/login.css">
-  <title>Inicio de sesión</title>
-</head>
+  <body style="display: flex; flex-direction: column; min-height: 100vh">
+    <%- include('partials/encabezado.html') %>
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6 text-black">
+            <div class="px-5 ms-xl-4">
+              <i
+                class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4"
+                style="color: #709085"></i>
+              <span class="h1 fw-bold mb-0"></span>
+            </div>
 
-<body style="display: flex; flex-direction: column; min-height: 100vh;">
-  <%- include('partials/encabezado.html') %>
-  <section>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-6 text-black">
+            <div
+              class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+              <form style="min-height: 30rem" action="/login" method="post">
+                <h2 class="fw-bold mb-3 pb-3" style="letter-spacing: 0.8px">
+                  Iniciar Sesión
+                </h2>
 
-          <div class="px-5 ms-xl-4">
-            <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
-            <span class="h1 fw-bold mb-0"></span>
+                <div class="form-outline mb-4">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control form-control-lg"
+                    required />
+                  <label class="form-label" for="email"
+                    >Correo Electrónico</label
+                  >
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input
+                    type="password"
+                    id="pass"
+                    name="pass"
+                    class="form-control form-control-lg"
+                    required />
+                  <label class="form-label" for="pass">Contraseña</label>
+                </div>
+
+                <div class="pt-1 mb-4">
+                  <button class="btn btn-info btn-block" type="submit">
+                    Entrar
+                  </button>
+                </div>
+
+                <% if (error) { %>
+                <p class="fw-bold text-danger"><%-error%></p>
+                <% } %>
+                <p class="small mb-5 pb-lg-2">
+                  <a class="text-muted" href="/recover"
+                    >Olvido su contraseña?</a
+                  >
+                </p>
+                <p>
+                  No tiene una cuenta?
+                  <a href="/register" class="link-info">Registrarse aquí</a>
+                </p>
+              </form>
+            </div>
           </div>
-
-          <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5 ">
-
-            <form style="min-height: 30rem;" action="/login" method="post">
-
-              <h2 class="fw-bold mb-3 pb-3" style="letter-spacing: .8px;">Iniciar Sesión</h2>
-
-              <div class="form-outline mb-4">
-                <input type="email" id="email" name="email" class="form-control form-control-lg" required />
-                <label class="form-label" for="email">Correo Electrónico</label>
-              </div>
-
-              <div class="form-outline mb-4">
-                <input type="password" id="pass" name="pass" class="form-control form-control-lg" required />
-                <label class="form-label" for="pass">Contraseña</label>
-              </div>
-
-              <div class="pt-1 mb-4">
-                <button class="btn btn-info btn-block" type="submit">Entrar</button>
-              </div>
-
-              <%
-              if (error) {
-              %>
-              <p class="fw-bold text-danger"><%-error%></p>
-              <%
-              }
-              %>
-              <p class="small mb-5 pb-lg-2"><a class="text-muted" href="/recover">Olvido su contraseña?</a></p>
-              <p>No tiene una cuenta? <a href="/register" class="link-info">Registrarse aquí</a></p>
-
-            </form>
-
+          <div class="col-sm-6 px-0 d-none d-sm-block">
+            <img
+              src="./img/inicio.jpg"
+              alt="Login image"
+              class="w-100 vh-100"
+              style="object-fit: cover; object-position: left" />
           </div>
-
-        </div>
-        <div class="col-sm-6 px-0 d-none d-sm-block">
-          <img src="https://img.freepik.com/foto-gratis/retrato-hacker_23-2148165916.jpg?w=740&t=st=1678520356~exp=1678520956~hmac=29247f7d329f5f70ccbbe6de4bc43ac644cccae9f9c2189d12c59cb8317c262f" alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
         </div>
       </div>
-    </div>
-  </section>
-  <%- include('partials/pie.html') %>
-</body>
-
+    </section>
+    <%- include('partials/pie.html') %>
+  </body>
 </html>
