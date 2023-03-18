@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/prism.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/temario.css" />
+
+    <title>JavaScript en HTML</title>
+  </head>
+
+  <body style="display: flex; flex-direction: column; min-height: 100vh">
+    <%- include('partials/encabezado.html') %>
+
+    <section class="section-50">
+      <div class="container">
+        <h3 class="m-b-50 heading-line">
+          Introduccion a JavaScript <i class="fa fa-bell text-muted"></i>
+        </h3>
+        <h1>Cómo incluir JavaScript en documentos XHTML</h1>
+        <hr />
+        <p>
+          La integración de JavaScript y XHTML es muy flexible, ya que existen
+          al menos tres formas para incluir código JavaScript en las páginas
+          web.
+        </p>
+        <h3>Incluir JavaScript en el mismo documento XHTML</h3>
+        <p>
+          El código JavaScript se encierra entre etiquetas script y se incluye
+          en cualquier parte del documento. Aunque es correcto incluir cualquier
+          bloque de código en cualquier zona de la página, se recomienda definir
+          el código JavaScript dentro de la cabecera del documento dentro de la
+          etiqueta head
+        </p>
+        <pre>
+        <code class="language-html">
+          ```&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+          &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+            &lt;head&gt;
+              &lt;meta
+                http-equiv="Content-Type"
+                content="text/html; charset=iso-8859-1" /&gt;
+              &lt;title>Ejemplo de código JavaScript en el propio documento&lt;/title&gt;
+              &lt;script type="text/javascript"&gt;
+                alert('Un mensaje de prueba');
+              &lt;/script&gt;
+            &lt;/head&gt;
+
+            &lt;body&gt;
+              &lt;p>Un párrafo de texto.&lt;/p&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          ```
+        </code>
+      </pre>
+        <p>
+          Para que la página XHTML resultante sea válida, es necesario añadir el
+          atributo type a la etiqueta &lt;script&gt;. Los valores que se
+          incluyen en el atributo type están estandarizados y para el caso de
+          JavaScript, el valor correcto es text/javascript. Este método se
+          emplea cuando se define un bloque pequeño de código o cuando se
+          quieren incluir instrucciones específicas en un determinado documento
+          HTML que completen las instrucciones y funciones que se incluyen por
+          defecto en todos los documentos del sitio web. El principal
+          inconveniente es que si se quiere hacer una modificación en el bloque
+          de código, es necesario modificar todas las páginas que incluyen ese
+          mismo bloque de código JavaScript.
+        </p>
+        <h3>Definir JavaScript en un archivo externo</h3>
+        <p>
+          Las instrucciones JavaScript se pueden incluir en un archivo externo
+          de tipo JavaScript que los documentos XHTML enlazan mediante la
+          etiqueta &lt;script&gt;. Se pueden crear todos los archivos JavaScript
+          que sean necesarios y cada documento XHTML puede enlazar tantos
+          archivos JavaScript como necesite. <br />
+          Ejemplo:
+        </p>
+        <pre>
+            Archivo código.js
+        </pre>
+        <pre>
+          <code class="language-js">
+
+            alert("Un mensaje de prueba");
+          </code>
+        </pre>
+        <pre>
+          Documento XHTML
+        </pre>
+        <pre>
+          <code class="language-html">
+            &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+            &lt;html xmlns="http://www.w3.org/1999/xhtml">
+              &lt;head>
+                &lt;meta
+                  http-equiv="Content-Type"
+                  content="text/html; charset=iso-8859-1" />
+                &lt;title>
+                  Ejemplo de código JavaScript en el propio documento
+                &lt;/title>
+              &lt;script type="text/javascript" src="/js/codigo.js">&lt;/script>
+              &lt;/head>
+
+              &lt;body>
+                &lt;p>Un párrafo de texto.&lt;/p>
+              &lt;/body>
+            &lt;/html>
+          </code>
+        </pre>
+        <h3>Incluir JavaScript en los elementos XHTML</h3>
+        <p>
+          Este último método es el menos utilizado, ya que consiste en incluir
+          trozos de JavaScript dentro del código XHTML de la página:
+        </p>
+        <pre>
+          <code class="language-html">
+            &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+            &lt;html xmlns="http://www.w3.org/1999/xhtml">
+              &lt;head>
+                &lt;meta
+                  http-equiv="Content-Type"
+                  content="text/html; charset=iso-8859-1" />
+                &lt;title>
+                  Ejemplo de código JavaScript en el propio documento
+                &lt;/title>
+              &lt;/head>
+
+              &lt;body>
+                &lt;p onclick="alert('Un mensaje de prueba')">
+                  Un párrafo de texto.
+                &lt;/p>
+              &lt;/body>
+            &lt;/html>
+          </code>
+        </pre>
+        <p>
+          El mayor inconveniente de este método es que ensucia innecesariamente
+          el código XHTML de la página y complica el mantenimiento del código
+          JavaScript. En general, este método sólo se utiliza para definir
+          algunos eventos y en algunos otros casos especiales, como se verá más
+          adelante.
+        </p>
+        <div class="row justify-content-center">
+          <div class="col-xl-7 col-lg-8">
+            <div class="section-tittle text-center mt-40">
+              <a href="/temario" class="border-btn text-decoration-none"
+                >Lista Temas
+              </a>
+              <a href="/tema1" class="border-btn text-decoration-none"
+                >Lección Anterior
+              </a>
+              <a href="/cuestionario" class="border-btn text-decoration-none"
+                >Siguiente Lección
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%- include('partials/pie.html') %>
+  </body>
+  <script src="/js/prism.js"></script>
+</html>

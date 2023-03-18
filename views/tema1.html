@@ -1,79 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/video.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <title>¿Qué es JavaScript?</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/video.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-  <title>¿Qué es JavaScript?</title>
-</head>
+  <body style="display: flex; flex-direction: column; min-height: 100vh">
+    <%- include('partials/encabezado.html') %>
 
-<body style="display: flex; flex-direction: column; min-height: 100vh;">
-  <%- include('partials/encabezado.html') %>
-
-<!--====== VIDEO ONE PART START ======-->
-<section class="video-area video-one">
-   <div class="container">
-      <div class="row justify-content-center">
-         <div class="col-lg-6 col-md-10">
+    <!--====== VIDEO ONE PART START ======-->
+    <section class="video-area video-one">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-10">
             <div class="video-title text-center">
-               <h5></h5>
-               <h2>¿Qué es JavaScript? </h2>
-               <p class="text-lg">
-                En el siguiente video se le proporcionara una breve introducción al lenguaje.
-               </p>
+              <h5></h5>
+              <h2>¿Qué es JavaScript?</h2>
+              <p class="text-lg">
+                En el siguiente video se le proporcionara una breve introducción
+                al lenguaje.
+              </p>
             </div>
             <!-- video title -->
-         </div>
-      </div>
-      <!-- row -->
-      <div class="row justify-content-center">
-         <div class="col-lg-10">
+          </div>
+        </div>
+        <!-- row -->
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
             <div class="video-content text-center">
               <img src="/img/que-es-javascript.jpg" alt="Video" />
 
-              <a class="video-popup glightbox" style="background-image: url(/img/plaly.png); background-size: cover;" href="
+              <a
+                class="video-popup glightbox"
+                style="
+                  background-image: url(/img/plaly.png);
+                  background-size: cover;
+                "
+                href="
               https://www.youtube.com/watch?v=2uNCuUSbFZ8
               ">
-               
-               </a>
+              </a>
             </div>
-         </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-xl-7 col-lg-8">
-          <div class="section-tittle text-center mt-40">
-            <a href="/temario" class=" border-btn text-decoration-none">Lista Temas</a>
-            <a href="/tema2" class=" border-btn text-decoration-none">Siguiente Tema</a>
           </div>
         </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-7 col-lg-8">
+            <div class="section-tittle text-center mt-40">
+              <a href="/temario" class="border-btn text-decoration-none"
+                >Lista Temas</a
+              >
+              <a href="/tema2" class="border-btn text-decoration-none"
+                >Siguiente Lección
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- row -->
       </div>
-      <!-- row -->
-   </div>
-   <!-- container -->
-</section>
-<!--====== VIDEO ONE PART ENDS ======-->
+      <!-- container -->
+    </section>
+    <!--====== VIDEO ONE PART ENDS ======-->
 
-<!--====== Glightbox js ======-->
-<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <!--====== Glightbox js ======-->
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 
-<script>
-  //========= glightbox
-  const videoTwo = GLightbox({
-    selector: ".glightbox",
-        type: "video",
-        source: "youtube", //vimeo, youtube or local
+    <script>
+      //========= glightbox
+      const videoTwo = GLightbox({
+        selector: '.glightbox',
+        type: 'video',
+        source: 'youtube', //vimeo, youtube or local
         width: 900,
         autoplayVideos: true,
       });
- </script>
+    </script>
 
-  <%- include('partials/pie.html') %>
-
-</body>
-
+    <%- include('partials/pie.html') %>
+  </body>
 </html>

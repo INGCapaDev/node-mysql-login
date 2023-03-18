@@ -111,10 +111,6 @@ router.get('/logout', (req, res) => {
   return res.redirect('/');
 });
 
-router.get('/test', (req, res) => {
-  res.render('test.html');
-});
-
 router.get('/cuestionario', (req, res) => {
   if (req.session.loggedin == true) {
     res.render('cuestionario.html');
@@ -134,6 +130,14 @@ router.get('/temario', (req, res) => {
 router.get('/tema1', (req, res) => {
   if (req.session.loggedin == true) {
     res.render('tema1.html');
+    return;
+  }
+  return res.redirect('/');
+});
+
+router.get('/tema2', (req, res) => {
+  if (req.session.loggedin == true) {
+    res.render('tema2.html');
     return;
   }
   return res.redirect('/');
