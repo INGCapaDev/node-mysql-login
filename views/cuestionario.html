@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <title>Cuestionario</title>
+</head>
+
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+  <%- include('partials/encabezado.html') %>
+  <div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 style="text-align: center;" class="mt-4"> Primera prueba de conocimientos</h1>
+        </div>
+    </div>
+</div>
+
+<!--Preguntas-->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <center>
+                <p><strong>1. Pregunta numero uno.  </strong></p>
+                <div type="A" class="btn-group flex-wrap">
+                    <input type="radio" class="btn-check" name="pregunta1" id="p11">
+                    <label class="btn btn-secondary" for="p11">Correcta</label>
+                    <input type="radio" class="btn-check" name="pregunta1" id="p12">
+                    <label class="btn btn-secondary" for="p12">Incorrecta</label>
+                    <input type="radio" class="btn-check" name="pregunta1" id="p13">
+                    <label class="btn btn-secondary" for="p13">Incorrecta</label>
+                    <input type="radio" class="btn-check" name="pregunta1" id="p14">
+                    <label class="btn btn-secondary" for="p14">Incorrecta</label>
+                </div>
+                
+                <p><strong>2. Pregunta numero dos.  </strong></p>
+                <div type="A" class="btn-group flex-wrap">
+                    <input type="radio" class="btn-check" name="pregunta2" id="p21">
+                    <label class="btn btn-secondary" for="p21">Incorrecta</label>
+                    <input type="radio" class="btn-check" name="pregunta2" id="p22">
+                    <label class="btn btn-secondary" for="p22">Incorrecta</label>
+                    <input type="radio" class="btn-check" name="pregunta2" id="p23">
+                    <label class="btn btn-secondary" for="p23">Incorrecta</label>
+                    <input type="radio" class="btn-check" name="pregunta2" id="p24">
+                    <label class="btn btn-secondary" for="p24">Correcta</label>
+                </div>
+                
+                <p><strong>3. Pregunta numero tres.  </strong></p>
+                <div type="A" class="btn-group flex-wrap">
+                    <input type="radio" class="btn-check" name="pregunta3" id="p31">
+                    <label class="btn btn-secondary" for="p31">Incorrecta</label>
+                    <input type="radio" class="btn-check" name="pregunta3" id="p32">
+                    <label class="btn btn-secondary" for="p32">Incorrecta</label>
+                    <input type="radio" class="btn-check" name="pregunta3" id="p33">
+                    <label class="btn btn-secondary" for="p33">Correcta</label>
+                    <input type="radio" class="btn-check" name="pregunta3" id="p34">
+                    <label class="btn btn-secondary" for="p34">Incorrecta</label>
+                </div>
+
+                <p><strong>4. Pregunta numero cuatro.  </strong></p>
+                <div type="A" class="btn-group flex-wrap">
+                    <input type="radio" class="btn-check" name="pregunta4" id="p41">
+                    <label class="btn btn-secondary" for="p41">Correcta</label>
+                    <input type="radio" class="btn-check" name="pregunta4" id="p42">
+                    <label class="btn btn-secondary" for="p42">Incorrecta</label>
+                    <input type="radio" class="btn-check" name="pregunta4" id="p43">
+                    <label class="btn btn-secondary" for="p43">Incorrecta</label>
+                    <input type="radio" class="btn-check" name="pregunta4" id="p44">
+                    <label class="btn btn-secondary" for="p44">Incorrecta</label>
+                </div>
+
+                <p><strong>5. Pregunta numero cinco.   </strong></p>
+                <div type="A" class="btn-group flex-wrap">
+                    <input type="radio" class="btn-check" name="pregunta5" id="p51">
+                    <label class="btn btn-secondary" for="p51">Incorrecta</label>
+                    <input type="radio" class="btn-check" name="pregunta5" id="p52">
+                    <label class="btn btn-secondary" for="p52">Correcta</label>
+                    <input type="radio" class="btn-check" name="pregunta5" id="p53">
+                    <label class="btn btn-secondary" for="p53">Incorrecta</label>
+                    <input type="radio" class="btn-check" name="pregunta5" id="p54">
+                    <label class="btn btn-secondary" for="p54">Incorrecta</label>
+                </div>
+                
+
+                
+
+                <div class="row justify-content-center">
+                  <div class="col-xl-7 col-lg-8 mb-3">
+                    <div class="section-tittle text-center mt-40">
+                      <a href="/temario" class=" border-btn text-decoration-none">Lista Temas</a>
+                      <btn onclick="resultado()" class=" border-btn text-decoration-none">Enviar</btn>
+                    </div>
+                  </div>
+                </div>
+            </center>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!--Llamada al script de respuestas-->
+<script src="/js/respuestas.js"></script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"
+    integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp"
+    crossorigin="anonymous"></script>
+  <%- include('partials/pie.html') %>
+
+</body>
+
+</html>

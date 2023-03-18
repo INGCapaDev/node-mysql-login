@@ -110,3 +110,31 @@ router.get('/logout', (req, res) => {
   }
   return res.redirect('/');
 });
+
+router.get('/test', (req, res) => {
+  res.render('test.html');
+});
+
+router.get('/cuestionario', (req, res) => {
+  if (req.session.loggedin == true) {
+    res.render('cuestionario.html');
+    return;
+  }
+  return res.redirect('/');
+});
+
+router.get('/temario', (req, res) => {
+  if (req.session.loggedin == true) {
+    res.render('temario.html');
+    return;
+  }
+  return res.redirect('/');
+});
+
+router.get('/tema1', (req, res) => {
+  if (req.session.loggedin == true) {
+    res.render('tema1.html');
+    return;
+  }
+  return res.redirect('/');
+});
