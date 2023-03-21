@@ -1,0 +1,23 @@
+.m-b-50 {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.dark-link {
+  color: #333;
+}
+
+.heading-line {
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.heading-line:after {
+  content: '';
+  height: 4px;
+  width: 75px;
+  background-color: #29b6f6;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

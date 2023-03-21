@@ -31,9 +31,23 @@ function resultado() {
   } else {
     p5 = 0;
   }
+  if (p1 == 0) {
+    alert('La respuesta de la pregunta 1 es incorrecta');
+  }
+  if (p2 == 0) {
+    alert('La respuesta de la pregunta 2 es incorrecta');
+  }
+  if (p3 == 0) {
+    alert('La respuesta de la pregunta 3 es incorrecta');
+  }
+  if (p4 == 0) {
+    alert('La respuesta de la pregunta 4 es incorrecta');
+  }
+  if (p5 == 0) {
+    alert('La respuesta de la pregunta 5 es incorrecta');
+  }
 
   nota = p1 + p2 + p3 + p4 + p5;
-  alert(' Aciertos: ' + nota);
 
   if (nota != 5) {
     alert(
