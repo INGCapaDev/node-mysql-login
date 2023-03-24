@@ -21,3 +21,8 @@
   bottom: 0;
   left: 0;
 }
+
+input[type='radio']:checked + label {
+  background-color: #ac5cfc !important;
+  background: #ac5cfc !important ;
+}
